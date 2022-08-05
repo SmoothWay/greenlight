@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug  3 11:38:12 2022
+# Make data base, printed on Fri Aug  5 14:18:35 2022
 
 # Variables
 
@@ -51,7 +51,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:52044
+JOURNAL_STREAM = 8:59612
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -77,7 +77,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-MANAGERPID = 1981
+MANAGERPID = 1978
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -95,7 +95,7 @@ PATH = /home/effect/miniconda3/bin:/home/effect/miniconda3/condabin:/usr/local/s
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/Effect:@/tmp/.ICE-unix/2266,unix/Effect:/tmp/.ICE-unix/2266
+SESSION_MANAGER = local/Effect:@/tmp/.ICE-unix/2257,unix/Effect:/tmp/.ICE-unix/2257
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -115,7 +115,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 59d6d6587a844d39ac4af69c7cab380a
+INVOCATION_ID = 207ef48d750a487aa13458e910d16f4c
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -139,7 +139,7 @@ PWD = /home/effect/projects/golang/greenlight
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2232
+SSH_AGENT_PID = 2223
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -257,11 +257,11 @@ LC_ALL = C
 # environment
 CONDA_PYTHON_EXE = /home/effect/miniconda3/bin/python
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/59ad5cd1_9199_4d96_9ec4_3436d4e561b8
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/86f781cf_774c_44ba_8f9f_a3aeda53bb8c
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.87
+GNOME_TERMINAL_SERVICE = :1.85
 # default
 SUFFIXES := 
 # environment
@@ -285,10 +285,11 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 4015
+VSCODE_PID = 3541
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
+ 
 # Load=138/1024=13%, Rehash=0, Collisions=20/162=12%
 
 # Pattern-specific Variable Values
@@ -297,10 +298,9 @@ _CE_CONDA =
 
 # Directories
 
- 
-# . (device 66306, inode 5505784): 10 files, no impossibilities.
+# . (device 66306, inode 5505784): 12 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -336,12 +336,12 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 15 / storage = 119 B / avg = 7 B
-# current buf: size = 8162 B / used = 119 B / count = 15 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 131 B / avg = 7 B
+# current buf: size = 8162 B / used = 131 B / count = 17 / avg = 7 B
 
-# strcache performance: lookups = 19 / hit rate = 21%
+# strcache performance: lookups = 21 / hit rate = 19%
 # hash-table stats:
-# Load=15/8192=0%, Rehash=0, Collisions=1/19=5%
-# Finished Make data base on Wed Aug  3 11:38:12 2022
+# Load=17/8192=0%, Rehash=0, Collisions=1/21=5%
+# Finished Make data base on Fri Aug  5 14:18:35 2022
 
  
