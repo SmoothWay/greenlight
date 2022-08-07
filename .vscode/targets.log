@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug  5 14:18:35 2022
+# Make data base, printed on Sun Aug  7 15:47:43 2022
 
 # Variables
 
@@ -45,13 +45,13 @@ CURDIR := /home/effect/projects/golang/greenlight
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/102
+SNAP_DATA = /var/snap/code/103
 # environment
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:59612
+JOURNAL_STREAM = 8:45452
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -77,7 +77,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-MANAGERPID = 1978
+MANAGERPID = 1951
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -87,7 +87,7 @@ VSCODE_CWD = /home/effect/projects/golang/greenlight
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/103/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -95,17 +95,17 @@ PATH = /home/effect/miniconda3/bin:/home/effect/miniconda3/condabin:/usr/local/s
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/Effect:@/tmp/.ICE-unix/2257,unix/Effect:/tmp/.ICE-unix/2257
+SESSION_MANAGER = local/Effect:@/tmp/.ICE-unix/2231,unix/Effect:/tmp/.ICE-unix/2231
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/effect/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/102
+SNAP = /snap/code/103
 # environment
 GOPATH = /home/effect/go
 # environment
-SNAP_VERSION = 3b889b09
+SNAP_VERSION = da76f933
 # environment
 CONDA_PREFIX = /home/effect/miniconda3
 # environment
@@ -115,9 +115,9 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 207ef48d750a487aa13458e910d16f4c
+INVOCATION_ID = 00456745ccbf4d6aa9c3a30d20715f69
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/103/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -139,7 +139,7 @@ PWD = /home/effect/projects/golang/greenlight
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2223
+SSH_AGENT_PID = 2197
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -153,7 +153,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/effect/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /home/effect/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
 # environment
 LOGNAME = effect
 # environment
@@ -191,7 +191,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/effect/snap/code/102
+SNAP_USER_DATA = /home/effect/snap/code/103
 # environment
 SHLVL = 1
 # environment
@@ -201,7 +201,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = effect
 # environment
-SNAP_REVISION = 102
+SNAP_REVISION = 103
 # environment
 LC_MONETARY = en_GB.UTF-8
 # makefile
@@ -223,7 +223,7 @@ OLDPWD = /home/effect
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-884c4cb3-1.69.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-884c4cb3-1.70.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -257,11 +257,11 @@ LC_ALL = C
 # environment
 CONDA_PYTHON_EXE = /home/effect/miniconda3/bin/python
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/86f781cf_774c_44ba_8f9f_a3aeda53bb8c
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/ae116512_2955_42fd_a2af_10fbc0771803
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.85
+GNOME_TERMINAL_SERVICE = :1.102
 # default
 SUFFIXES := 
 # environment
@@ -285,7 +285,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 3541
+VSCODE_PID = 9267
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
@@ -342,6 +342,6 @@ Makefile:
 # strcache performance: lookups = 21 / hit rate = 19%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/21=5%
-# Finished Make data base on Fri Aug  5 14:18:35 2022
+# Finished Make data base on Sun Aug  7 15:47:43 2022
 
  
