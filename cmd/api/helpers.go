@@ -12,7 +12,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-type envelop map[string]interface{}
+type envelope map[string]interface{}
 
 func (app *application) readJSON(w http.ResponseWriter, r *http.Request, dst interface{}) error {
 	maxBytes := 1_048_576
@@ -57,7 +57,7 @@ func (app *application) readJSON(w http.ResponseWriter, r *http.Request, dst int
 	return nil
 }
 
-func (app *application) writeJSON(w http.ResponseWriter, status int, data envelop, headers http.Header) error {
+func (app *application) writeJSON(w http.ResponseWriter, status int, data envelope, headers http.Header) error {
 	js, err := json.MarshalIndent(data, "", "\t")
 	if err != nil {
 		return err
