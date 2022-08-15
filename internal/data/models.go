@@ -6,6 +6,7 @@ import (
 )
 
 var ErrRecodeNotFound = errors.New("record not found")
+var ErrEditConflict = errors.New("edit conflict")
 
 type Models struct {
 	Movies MovieModel
