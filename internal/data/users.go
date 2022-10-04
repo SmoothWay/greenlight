@@ -24,7 +24,7 @@ type User struct {
 	Name      string    `json:"name"`
 	Email     string    `json:"email"`
 	Password  password  `json:"-"`
-	Activated bool      `json:"activated"`
+	Activated bool      `json:"activate"`
 	Version   int       `json:"-"`
 }
 
@@ -59,11 +59,11 @@ func (p *password) Mathces(plaintextPassword string) (bool, error) {
 
 func ValidateEmail(v *validator.Validator, email string) {
 	v.Check(email != "", "email", "must be provided")
-	v.Check(validator.Matches(email, validator.EmailRegexp), "email", "must pe a valid email address")
+	v.Check(validator.Matches(email, validator.EmailRegexp), "email", "must be a valid email address")
 }
 
 func ValidatePasswordPlaintext(v *validator.Validator, password string) {
-	v.Check(password != "", password, "must be provided")
+	v.Check(password != "", "password", "must be provided")
 	v.Check(len(password) >= 8, "password", "must be at least 8 bytes long")
 	v.Check(len(password) <= 72, "password", "must no be more thatn 72 bytes long")
 
@@ -71,7 +71,7 @@ func ValidatePasswordPlaintext(v *validator.Validator, password string) {
 
 func ValidateUser(v *validator.Validator, user *User) {
 	v.Check(user.Name != "", "name", "must be provided")
-	v.Check(len(user.Name) <= 500, "name", "must not be more thatn 500 bytes long")
+	v.Check(len(user.Name) <= 500, "name", "must not be more than 500 bytes long")
 
 	ValidateEmail(v, user.Email)
 
@@ -86,9 +86,9 @@ func ValidateUser(v *validator.Validator, user *User) {
 
 func (m UserModel) Insert(user *User) error {
 	query := `
-		INSERT INTO users (name, email, passwrod_hash, activated)
-		VALUES($1, $2, $3, $4
-		RETURNING id, created_at version`
+		INSERT INTO users (name, email, password_hash, activate)
+		VALUES($1, $2, $3, $4)
+		RETURNING id, created_at, version`
 
 	args := []interface{}{user.Name, user.Email, user.Password.hash, user.Activated}
 
@@ -110,7 +110,7 @@ func (m UserModel) Insert(user *User) error {
 
 func (m UserModel) GetByEmail(email string) (*User, error) {
 	query := `
-		SELECT id, created_at, name, email, password_hash, activated, version
+		SELECT id, created_at, name, email, password_hash, activate, version
 		FROM users
 		WHERE email = $1`
 	var user User
@@ -141,7 +141,7 @@ func (m UserModel) GetByEmail(email string) (*User, error) {
 func (m UserModel) Update(user *User) error {
 	query := `
 		UPDATE users
-		SET name = $1, email = $2, password_hash = $3, activated = $4, version = version +1
+		SET name = $1, email = $2, password_hash = $3, activate = $4, version = version +1
 		WHERE id = $5 AND version = $6
 		RETURNING version`
 
