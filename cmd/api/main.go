@@ -5,10 +5,12 @@ import (
 	"database/sql"
 	"flag"
 	"os"
+	"sync"
 	"time"
 
 	"github.com/SmoothWay/greenlight/internal/data"
 	"github.com/SmoothWay/greenlight/internal/jsonlog"
+	"github.com/SmoothWay/greenlight/internal/mailer"
 	_ "github.com/lib/pq"
 )
 
@@ -28,12 +30,21 @@ type config struct {
 		burst   int
 		enabled bool
 	}
+	smtp struct {
+		host     string
+		port     int
+		username string
+		password string
+		sender   string
+	}
 }
 
 type application struct {
 	config config
 	logger *jsonlog.Logger
 	models data.Models
+	mailer mailer.Mailer
+	wg     sync.WaitGroup
 }
 
 func main() {
@@ -43,7 +54,7 @@ func main() {
 	flag.StringVar(&cfg.env, "env", "development", "Environment (development|staging|production")
 	flag.StringVar(&cfg.db.dsn, "db-dsn", os.Getenv("GREENLIGHT_DB_DSN"), "PostgreSQL DSN")
 	flag.IntVar(&cfg.db.maxOpenConns, "db-max-open-conns", 25, "PpstgreSQL max open connections")
-	flag.IntVar(&cfg.db.maxIdleConns, "db-max-idle-conns", 25, "POstgresSQL max idle connections")
+	flag.IntVar(&cfg.db.maxIdleConns, "db-max-idle-conns", 25, "POstgreSQL max idle connections")
 
 	flag.StringVar(&cfg.db.maxIdleTime, "db-max-idle-time", "15m", "PostgreSQL max connection idle time")
 
@@ -51,6 +62,11 @@ func main() {
 	flag.IntVar(&cfg.limiter.burst, "limiter-burst", 4, "Rate limiter maximum burst")
 	flag.BoolVar(&cfg.limiter.enabled, "limiter-enabled", true, "Enable rate limiter")
 
+	flag.StringVar(&cfg.smtp.host, "smtp-host", "localhost", "SMTP host")
+	flag.IntVar(&cfg.smtp.port, "smtp-port", 1025, "SMTP port")
+	flag.StringVar(&cfg.smtp.username, "smtp-username", "", "SMTP username")
+	flag.StringVar(&cfg.smtp.password, "smtp-password", "", "SMTP password")
+	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "Greenlight <no-reply@greenlight.smoothway.online>", "SMTP sender")
 	flag.Parse()
 	logger := jsonlog.New(os.Stdout, jsonlog.LevelInfo)
 
@@ -64,6 +80,7 @@ func main() {
 		config: cfg,
 		logger: logger,
 		models: data.NewModels(db),
+		mailer: mailer.New(cfg.smtp.host, cfg.smtp.port, cfg.smtp.username, cfg.smtp.password, cfg.smtp.sender),
 	}
 
 	err = app.serve()

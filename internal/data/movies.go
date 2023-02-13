@@ -104,7 +104,7 @@ func (m MovieModel) Insert(movie *Movie) error {
 
 func (m MovieModel) Get(id int64) (*Movie, error) {
 	if id < 1 {
-		return nil, ErrRecodeNotFound
+		return nil, ErrRecordNotFound
 	}
 	querry := `
 		SELECT id, created_at, title, year, runtime, genres, version
@@ -128,7 +128,7 @@ func (m MovieModel) Get(id int64) (*Movie, error) {
 	if err != nil {
 		switch {
 		case errors.Is(err, sql.ErrNoRows):
-			return nil, ErrRecodeNotFound
+			return nil, ErrRecordNotFound
 		default:
 			return nil, err
 		}
@@ -167,7 +167,7 @@ func (m MovieModel) Update(movie *Movie) error {
 
 func (m MovieModel) Delete(id int64) error {
 	if id < 1 {
-		return ErrRecodeNotFound
+		return ErrRecordNotFound
 	}
 	query := `
 	DELETE FROM movies
@@ -185,7 +185,7 @@ func (m MovieModel) Delete(id int64) error {
 		return err
 	}
 	if rowsAffected == 0 {
-		return ErrRecodeNotFound
+		return ErrRecordNotFound
 	}
 	return nil
 }
