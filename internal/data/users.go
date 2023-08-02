@@ -13,6 +13,7 @@ import (
 
 var (
 	ErrDuplicateEmail = errors.New("duplicate email")
+	AnonymouseUser    = &User{}
 )
 
 type UserModel struct {
@@ -32,6 +33,10 @@ type User struct {
 type password struct {
 	plaintext *string
 	hash      []byte
+}
+
+func (u *User) isAnonymous() bool {
+	return u == AnonymouseUser
 }
 
 func (p *password) Set(plaintextPassword string) error {
@@ -175,7 +180,7 @@ func (m UserModel) Update(user *User) error {
 func (m UserModel) GetForToken(tokenScope, tokenPlaintext string) (*User, error) {
 	tokenHash := sha256.Sum256([]byte(tokenPlaintext))
 	query := `
-	SELECT users.id, users.created_at,users.name, users.email, users.password_hash, users.activate, users.version
+	SELECT users.id, users.created_at, users.name, users.email, users.password_hash, users.activate, users.version
 	FROM users
 	INNER JOIN tokens
 	ON users.id = tokens.user_id

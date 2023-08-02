@@ -102,13 +102,11 @@ func (app *application) activateUserHandler(w http.ResponseWriter, r *http.Reque
 	if err != nil {
 		switch {
 		case errors.Is(err, data.ErrEditConflict):
+			app.editConflictResponse(w, r)
+		default:
 			app.serverErrorResponse(w, r, err)
 		}
 		return
-	}
-	err = app.writeJSON(w, http.StatusOK, envelope{"user": user}, nil)
-	if err != nil {
-		app.serverErrorResponse(w, r, err)
 	}
 	err = app.models.Tokens.DeleteAllForUser(data.ScopeActivation, user.ID)
 	if err != nil {
